@@ -1,22 +1,27 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Button, Table, Row } from 'reactstrap';
-import  {getAll}  from '../services/postsService.js'
+import  {getAll}  from '../services/postsService.js';
+import { connect } from 'react-redux';
 
-export class Post extends Component {
+class Post extends Component {
     constructor(props)
     {
-        super(props)
+        super(props);
         this.state = { 
-            posts: ''
+            posts: []
          }
     }
     getPosts()
     {
         console.log("Before")
         console.log(this.state.posts)
-        this.state.posts = getAll()
+        getAll().then(
+            (response) => {
+                this.props.dispatch({type: 'showAll', posts: response.data})
+            }
+        )
         console.log('-------')
-        console.log(this.state.posts)
+        console.log(this.props.posts)
         console.log("Changed")
     }
     render() {
@@ -27,9 +32,17 @@ export class Post extends Component {
                 onClick={() => this.getPosts()}
                 >This is a button</Button>
                 
-                {this.props.posts? <Row>{this.state.posts.data}</Row> : <Row>nothing here</Row>} 
+                <Table>
+                    
+                </Table>
                 
             </div>
         )
     }
-} export default Post
+}
+function mapStateToProps(state) {
+    const {posts} = state;
+    return {posts: posts};
+}
+
+export default connect(mapStateToProps)(Post)
