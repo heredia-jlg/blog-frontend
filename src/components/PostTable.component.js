@@ -40,6 +40,7 @@ class postTable extends Component {
         )
     }
 }
+
 function mapStateToProps(state) {
     const {posts} = state;
     return {posts: posts};
