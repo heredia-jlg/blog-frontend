@@ -11,6 +11,7 @@ class postTable extends Component {
             posts: []
          }
     }
+
     getPosts()
     {
         console.log("Before")
