@@ -3,7 +3,7 @@ import { Button, Table, Row } from 'reactstrap';
 import  {getAll}  from '../services/postsService.js';
 import { connect } from 'react-redux';
 
-class Post extends Component {
+class postTable extends Component {
     constructor(props)
     {
         super(props);
@@ -33,7 +33,7 @@ class Post extends Component {
                 >This is a button</Button>
                 
                 <Table>
-                    
+
                 </Table>
                 
             </div>
@@ -45,4 +45,4 @@ function mapStateToProps(state) {
     return {posts: posts};
 }
 
-export default connect(mapStateToProps)(Post)
+export default connect(mapStateToProps)(postTable)
