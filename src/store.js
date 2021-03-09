@@ -7,9 +7,6 @@ const initialState = {
 };
 
 function blogReducer(state = initialState, action) {
-    console.log("Store")
-    console.log("state: " + state);
-    console.log("action: " + action);
     switch(action.type) {
         case 'login':
             return Object.assign({}, state, {username: '', password:'', user: action.user})
@@ -18,6 +15,7 @@ function blogReducer(state = initialState, action) {
         case 'handleComment':
             return Object.assign({}, state, {comment: action.comment})
         case 'showAll':
+            console.log('Store, showAll')
             return Object.assign({}, state, {posts: action.posts})
         default:
             return state;

@@ -1,16 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PostTable from './PostTable.component.js'
-import Router from './routing'
 
-export default function Dashboard()
-{
+class Dashboard extends Component{
     
-        return(
-            <div>
-                <h1>Dashboard</h1>
-                <PostTable></PostTable>
-                <Router></Router>
-            </div>
-        );
+render(){
+    return(
+        <div>
+            <h1>Dashboard</h1>
+
+            <PostTable/>
+        </div>
+    )
+}
     
 }
+export default Dashboard
