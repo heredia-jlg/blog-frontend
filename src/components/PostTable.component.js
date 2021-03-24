@@ -3,28 +3,13 @@ import { Button, Table, Row } from 'reactstrap';
 import  {getAll}  from '../services/postsService.js';
 import { connect } from 'react-redux';
 import PostComponent from './Post.component.js'
+import styles from '../styles.module.css'
 
 class postTable extends Component {
-    constructor(props){
-        super(props)
-    }
-
-    // getPosts()
-    // {
-    //     console.log("Before")
-    //     getAll().then(
-    //         (response) => {
-    //             this.props.dispatch({type: 'showAll', posts: response.data})
-    //         }
-    //     )
-    //     .catch(error => {
-    //         console.log( error );
-    //       });
-    //     console.log('-------')
-    //     console.log("Changed")
-    // }
     componentDidMount(){
         console.log("postTable.component - componentDidMount")
+        this.props.dispatch({type: 'setCurrentPage', currentPage: 'blog'})
+
         getAll().then(
             (response) => {
                 this.props.dispatch({type: 'showAll', posts: response.data})
@@ -33,19 +18,13 @@ class postTable extends Component {
     }
     render() {
         return (
-            <div>
-                
-                <Table style={{margin: 'auto',
-                            width: '30%'}}>
+                <Table id={styles.blogTable}>
                     {console.log("Table created")}
-                    {console.log(this.props.posts)}
                     {
                     this.props.posts.map(
                         (post) => {
                             return(
-                                <Row>
-                                    {console.log("Row")}
-                                    {console.log(post.id)}
+                                <Row className={styles.row}>
                                     <PostComponent
                                     key={post.id}
                                     post={post} />
@@ -55,15 +34,15 @@ class postTable extends Component {
                         )
                     }
                 </Table>
-                
-            </div>
+            
         )
     }
 }
 
 function mapStateToProps(state) {
-    const {posts} = state;
-    return {posts: posts};
+    const {posts, currentPage} = state;
+    return {posts: posts,
+            currentPage: currentPage}
 }
 
 export default connect(mapStateToProps)(postTable)

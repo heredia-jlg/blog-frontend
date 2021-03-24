@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Card, Button} from 'react-bootstrap'
+import styles from '../styles.module.css'
 
 class PostComponent extends Component {
     constructor(props)
@@ -11,26 +11,28 @@ class PostComponent extends Component {
     }
     render() {
         return (
-            <div>
-                <Card style={{ width: '25rem', margin: '20px', height: '20rem'}}>
-                {console.log("Render method")}
+                <div className={styles.postContainer}>
                 
-                <Card.Img variant="top" src="holder.js/100px180" />
+                {/*<Card.Img variant="top" src="holder.js/100px180" style={{width: '100%', height: '200px'}}/>*/}
 
 
-                        <Card.Body>
-                            <Card.Title>{ this.props.post.title }</Card.Title>
-                                <Card.Text>
-                                    {this.props.post.text}
-                                </Card.Text>
-
-                            <Button variant="primary">Go somewhere</Button>
-                        </Card.Body>
+                        <div className={styles.post}>
+                            <div className={styles.postTitle} > 
+                                <h2>{ this.props.post.title }</h2> 
+                            </div>
 
 
-                </Card> 
-                
-            </div>
+
+                                <div>
+                                    <p>{this.props.post.text}</p>
+                                </div>
+
+                            
+                        </div>
+
+
+                </div> 
+            
         )
     }
 }

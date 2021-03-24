@@ -2,14 +2,15 @@
 import { Fragment } from 'react';
 import './App.css';
 import Dashboard from './components/dashboard.js';
-import Navigation from './components/Navigation.component.js'
-import NewPost from './components/NewPost.component.js'
-import Home from './components/home.component.js'
+import Navigation from './components/Navigation.component.js';
+import NewPost from './components/NewPost.component.js';
+import Home from './components/home.component.js';
 import store from './store.js';
 import {Provider} from 'react-redux';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
-import styles from './styles.module.css'
-import { Container } from 'reactstrap';
+import styles from './styles.module.css';
+import Banner from './components/Banner.component';
+import Portfolio from './components/Portfolio.component.js';
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
       <Provider store={store}>
         <Router >
             <Navigation />
-            <div id={styles.top}></div>
+            <div id={styles.top}>
+                <Banner/>
+            </div>
 
             <div id={styles.sideBar} >
             </div>
@@ -27,6 +30,7 @@ function App() {
                   <Route path="/" exact component={Home}/>
                   <Route path="/new" exact component={NewPost}/>
                   <Route path="/blog" exact component={Dashboard}/>
+                  <Route path="/portfolio" exact component={Portfolio}/>
                 </switch>
             </div>
             

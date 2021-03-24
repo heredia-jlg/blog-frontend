@@ -17,17 +17,14 @@ export default class NewPost extends Component {
     }
 
     setTitle(event){
-        event.preventDefault();
         this.setState( {title: event.target.value} );
     }
 
     setContent(event){
-        event.preventDefault();
         this.setState( {text: event.target.value} );
     }
 
     setTags(event){
-        event.preventDefault();
         this.setState( {tags: event.target.value} );
     }
 

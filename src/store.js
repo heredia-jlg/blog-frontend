@@ -3,6 +3,8 @@ import { createStore } from 'redux';
 const initialState = {
   posts: [],
   tags: [],
+  currentPage: '',
+  currentPageDescription: '',
   user: {username:'', password:'', usertype:''}
 };
 
@@ -15,8 +17,11 @@ function blogReducer(state = initialState, action) {
         case 'handleComment':
             return Object.assign({}, state, {comment: action.comment})
         case 'showAll':
-            console.log('Store, showAll')
+            console.log('Store - showAll')
             return Object.assign({}, state, {posts: action.posts})
+        case 'setCurrentPage':
+            console.log('store - currentPageChange : ' + action.currentPage)
+            return Object.assign({}, state, {currentPage: action.currentPage})
         default:
             return state;
     }

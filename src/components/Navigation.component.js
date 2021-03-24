@@ -6,6 +6,7 @@ import styles from '../styles.module.css'
 
 
 class Navigation extends Component {
+    
     render() {
         return(
                 <Nav defaultActiveKey="/home" 
@@ -15,10 +16,8 @@ class Navigation extends Component {
 
                     <Navbar.Brand className={styles.link} href="/">Home</Navbar.Brand>
                     <Nav className="mr-auto">
-                    <Nav.Link className={styles.link} href="/new">new</Nav.Link>
                     <Nav.Link className={styles.link} href="/blog">Blog</Nav.Link>
-                    <Nav.Link className={styles.link} href="">new</Nav.Link>
-                    <Nav.Link className={styles.link} href="">Blog</Nav.Link>
+                    <Nav.Link className={styles.link} href="/portfolio">Portfolio</Nav.Link>
                     </Nav>
                 </Nav>
         )
