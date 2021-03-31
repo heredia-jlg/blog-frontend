@@ -5,10 +5,44 @@ body{
     background-size: cover;
     
 }
+#socialLogo
+{
+    background-color: black;
+}
 .container{
     margin: 0 0 0 0;
     padding-left: 0;
     padding-right: 0;
+}
+.sectionWithPhoto
+{
+    min-height: 800px;
+    width: 100%;
+}
+.subSectionText
+{
+    display: block;
+    width: 50%;
+    min-height: 800px;
+    float: left;
+}
+.subSectionText p
+{
+    text-align: center;
+    margin-top: 250px;
+    padding: 20%;
+}
+.subSectionImg
+{
+    display: block;
+    width: 50%;
+    min-height: 800px;
+    float: left;
+}
+.subSectionImg img
+{
+    margin-top: 250px;
+    height: 60%;   
 }
 
 #top

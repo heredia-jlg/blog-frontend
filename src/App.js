@@ -11,6 +11,7 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import styles from './styles.module.css';
 import Banner from './components/Banner.component';
 import Portfolio from './components/Portfolio.component.js';
+import Footer from './components/Footer.component.js'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             </div>
 
             <div id={styles.sideBar} >
+                  <Footer/>
             </div>
             
             <div id={styles.main} >

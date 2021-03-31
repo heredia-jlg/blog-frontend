@@ -8,7 +8,7 @@ export class banner extends Component {
     switchDescription(currentPage){
         switch(currentPage){
             case 'home':
-                return { title: 'Jorge Gonzalez Heredia', description: 'Hello, World! This is my personal website.' };
+                return { title: 'Jorge Gonzalez Heredia', description: 'Full-Stack Software Engineer' };
             case 'blog':
                 return { title: 'Blog.', description: 'Welcome to the place where I share my thoughts.' };
             case 'portfolio':
