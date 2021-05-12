@@ -30,7 +30,7 @@ function App() {
             <div id={styles.main} >
                 <switch>
                   <Route path="/" exact component={Home}/>
-                  <Route path="/new" exact component={NewPost}/>
+                  <Route path="/blog/new" exact component={NewPost}/>
                   <Route path="/blog" exact component={Dashboard}/>
                   <Route path="/portfolio" exact component={Portfolio}/>
                 </switch>
