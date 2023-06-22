@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import SectionWithPhoto from './SectionWithPhoto.component.js'
 import image from '../images/me.jpg'
+import {HorizontalSection} from './HorizontalSection.jsx'
 
 class home extends Component {
     componentDidMount()
@@ -15,7 +16,8 @@ class home extends Component {
     render() {
         return (
             <div>
-                <SectionWithPhoto side='right' text={this.helloWorld} imgSrc={image}/>
+                <HorizontalSection text={this.helloWorld} imgSrc={image}/>
+                <HorizontalSection text={""} />
             </div>
         )
     }

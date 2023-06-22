@@ -181,3 +181,38 @@ body{
     margin-top: 40px;
     background-color: white;
 }
+.textContainer{
+    margin-top: 60px;;
+}
+.postDate{
+    float: left;
+}
+.tagsLabel{
+    float: right;
+}
+.tagContainer{
+    width: 100%;
+    height: 30px;
+    float: left;
+
+
+}
+.tagContainer p{
+    background-color: rgba(242, 242, 242, 1);
+    border: 1px;
+    border-radius: 50px;
+    float: left;
+    margin-left: 10px;
+    font-size: small;
+    padding: 2px;
+    min-width: 40px;
+    text-align: center;
+}
+.horizontalSection{
+    min-height: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}

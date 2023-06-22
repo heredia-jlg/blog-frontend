@@ -8,6 +8,8 @@ export class SectionWithPhoto extends Component {
 
     sideRender(){
         console.log('sideRender, side: ' + this.props.side)
+
+        
         if(this.props.side === 'right'){
             return (            
             <div className={ styles.sectionWithPhotoLeft }>

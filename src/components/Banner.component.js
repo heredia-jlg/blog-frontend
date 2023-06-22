@@ -31,7 +31,7 @@ export class banner extends Component {
                     </motion.div>
                     
                 </motion.div>
-                <motion.div animate={ {y:0} } initial={{y:200}} transition={{duration: 1}}>
+                <motion.div animate={ {y:-10} } initial={{y:200}} transition={{duration: 1}}>
                     <img src={downArrow} id={styles.arrow}></img>
                 </motion.div>
                     
